@@ -18,10 +18,9 @@
     <header class="header">
         <div class="container header__inner">
             <a href="/" class="logo">
-                DROGANOSSA MANIPULADOS
+                DROGANOSSA <span>MANIPULADOS</span>
             </a>
             <nav class="nav">
-                <a href="#contato" class="nav__link">Contato</a>
                 <div class="cart-icon" id="cart-icon-trigger">
                     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                     <span class="cart-count" id="cart-count">0</span>
@@ -62,6 +61,18 @@
             </div>
         </section>
 
+        <!-- Sticky Navigation Bar -->
+        <nav class="sticky-nav">
+            <div class="container sticky-nav__inner">
+                <a href="javascript:void(0)" onclick="filterCategory('Emagrecimento')" class="category-link">Emagrecimento</a>
+                <a href="javascript:void(0)" onclick="filterCategory('Queda de Cabelo')" class="category-link">Queda de Cabelo</a>
+                <a href="javascript:void(0)" onclick="filterCategory('Sono')" class="category-link">Sono</a>
+                <a href="javascript:void(0)" onclick="filterCategory('Acnes')" class="category-link">Acnes</a>
+                <a href="javascript:void(0)" onclick="filterCategory('Saúde')" class="category-link">Saúde</a>
+                <a href="javascript:void(0)" onclick="filterCategory('Beleza')" class="category-link">Beleza</a>
+            </div>
+        </nav>
+
         <!-- Sidebar Cart -->
         <div class="cart-sidebar" id="cart-sidebar">
             <div class="cart-sidebar__header">
@@ -77,26 +88,66 @@
             </div>
         </div>
 
-        <!-- Sticky Category Nav -->
-        <nav class="category-bar">
-            <div class="container category-bar__inner">
-                <button class="category-btn active" onclick="filterCategory('All')">Todos</button>
-                <button class="category-btn" onclick="filterCategory('Saúde')">Saúde</button>
-                <button class="category-btn" onclick="filterCategory('Emagrecimento')">Emagrecimento</button>
-                <button class="category-btn" onclick="filterCategory('Beleza')">Beleza</button>
-                <button class="category-btn" onclick="filterCategory('Bem-estar')">Bem-estar</button>
+        <!-- Featured Products Section -->
+        <section class="products container reveal">
+            <h2 class="section-title">Nossos Destaques</h2>
+            <div class="grid" id="featured-grid">
+                <!-- 8 Featured Products injected by JS -->
             </div>
-        </nav>
+        </section>
 
-        <!-- Products Section -->
-        <section id="produtos" class="products container">
+        <!-- Icon Category Bar -->
+        <section class="icon-categories container">
+            <div class="icon-grid">
+                <button class="icon-btn" onclick="filterCategory('Emagrecimento')">
+                    <div class="icon-square">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <span>Emagrecimento</span>
+                </button>
+                <button class="icon-btn" onclick="filterCategory('Queda de Cabelo')">
+                    <div class="icon-square">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 0-10 10c0 5.523 4.477 10 10 10s10-4.477 10-10A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <span>Cabelo</span>
+                </button>
+                <button class="icon-btn" onclick="filterCategory('Sono')">
+                    <div class="icon-square">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </div>
+                    <span>Sono</span>
+                </button>
+                <button class="icon-btn" onclick="filterCategory('Acnes')">
+                    <div class="icon-square">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                    </div>
+                    <span>Acnes</span>
+                </button>
+                <button class="icon-btn" onclick="filterCategory('Saúde')">
+                    <div class="icon-square">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <span>Saúde</span>
+                </button>
+                <button class="icon-btn" onclick="filterCategory('Beleza')">
+                    <div class="icon-square">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <span>Beleza</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Category Result Section -->
+        <section id="produtos-categoria" class="products container">
+            <h2 class="section-title" id="category-section-title">Nossos Produtos</h2>
             <div class="grid" id="product-grid">
-                <!-- Products will be injected by JS -->
+                <!-- Filtered products injected by JS -->
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contato" class="container" style="padding: 5rem 0;">
+        <section id="contato" class="container reveal" style="padding: 5rem 0;">
             <h2 class="section-title">Personalize seu Manipulado</h2>
             <div style="max-width: 800px; margin: 0 auto;">
                 <p style="text-align: center; margin-bottom: 2rem;">Envie sua receita ou fale com um de nossos farmacêuticos agora mesmo.</p>
@@ -108,27 +159,33 @@
                 </form>
             </div>
         </section>
+
+        <!-- Who We Are Section -->
+        <section class="who-we-are container reveal">
+            <div class="who-we-are__grid">
+                <div class="who-we-are__square">
+                    <div class="who-we-are__square-content">
+                        DROGANOSSA
+                    </div>
+                </div>
+                <div class="who-we-are__text">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Quem somos nós?</h2>
+                    <p>Fundada com o propósito de oferecer saúde personalizada e de alta qualidade, a <strong>DrogaNossa Manipulados</strong> nasceu da paixão pela ciência farmacêutica e pelo cuidado individualizado. Acreditamos que cada organismo é único e, por isso, cada tratamento deve ser formulado sob medida.</p>
+                    <p>Nossa história começou há mais de uma década, unindo tradição e tecnologia de ponta em nossos laboratórios. Hoje, somos referência em manipulação de medicamentos, suplementos esportivos e dermocosméticos, sempre seguindo rigorosos padrões de controle de qualidade.</p>
+                    <p>Mais do que uma farmácia, somos parceiros da sua longevidade. Nossa equipe de farmacêuticos especialistas está em constante atualização para transformar prescrições médicas em soluções eficazes que promovem bem-estar e resultados reais para nossos clientes.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div>
-                    <h3>DrogaNossa</h3>
-                    <p>Sua saúde é nossa prioridade. Manipulados com rigor farmacêutico e amor.</p>
-                </div>
-                <div>
-                    <h3>Links</h3>
-                    <ul>
-                        <li><a href="#">Privacidade</a></li>
-                        <li><a href="#">Termos</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Contato</h3>
-                    <p>Email: contato@droganossa.com.br</p>
-                    <p>WhatsApp: (11) 99999-9999</p>
-                </div>
+        <div class="container footer__grid">
+            <div class="brand">DROGANOSSA <span>MANIPULADOS</span></div>
+            <div style="display: flex; gap: 2rem;">
+                <p>Email: contato@droganossa.com.br</p>
+                <p>WhatsApp: (11) 99999-9999</p>
+                <a href="#">Privacidade</a>
+                <a href="#">Termos</a>
             </div>
         </div>
     </footer>
@@ -146,7 +203,6 @@
                     <p style="font-weight: bold; margin-bottom: 1rem;">Informação técnica:</p>
                     <p class="modal__info" id="modal-tech-info"></p>
                     <div class="product-card__price" id="modal-price"></div>
-                    <button class="btn" style="width: 100%; margin-bottom: 2rem;" id="modal-buy-btn">Comprar Agora via WhatsApp</button>
                 </div>
             </div>
             
