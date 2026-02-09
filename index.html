@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrogaNossa - Farmácia de Manipulação | Saúde Personalizada</title>
+    <meta name="description" content="Especialista em medicamentos manipulados, suplementos e cosméticos personalizados. Qualidade e confiança na DrogaNossa Manipulados.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__inner">
+            <a href="/" class="logo">
+                DROGANOSSA MANIPULADOS
+            </a>
+            <nav class="nav">
+                <a href="#contato" class="nav__link">Contato</a>
+                <div class="cart-icon" id="cart-icon-trigger">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Carousel Section -->
+        <section class="carousel" id="carousel">
+            <div class="carousel__slide active slide-orange">
+                <div class="carousel__content">
+                    <h1 class="carousel__title">DrogaNossa - Manipulados</h1>
+                    <p class="carousel__subtitle">Sua saúde, nossa fórmula.</p>
+                    <a href="#produtos" class="btn">Ver Catálogo</a>
+                </div>
+            </div>
+            <div class="carousel__slide slide-blue">
+                <div class="carousel__content">
+                    <h1 class="carousel__title">Emagreça, Melhore, Cuide-se</h1>
+                    <p class="carousel__subtitle">Com os nossos manipulados exclusivos.</p>
+                    <a href="#produtos" class="btn">Ver Promoções</a>
+                </div>
+            </div>
+            <div class="carousel__slide slide-orange">
+                <div class="carousel__content">
+                    <h1 class="carousel__title">Queda de cabelo?</h1>
+                    <p class="carousel__subtitle">Nós Manipulamos a solução ideal para você!</p>
+                    <a href="https://wa.me/5511999999999" class="btn">Falar com Farmacêutico</a>
+                </div>
+            </div>
+            
+            <div class="carousel__nav">
+                <span class="dot active" onclick="setSlide(0)"></span>
+                <span class="dot" onclick="setSlide(1)"></span>
+                <span class="dot" onclick="setSlide(2)"></span>
+            </div>
+        </section>
+
+        <!-- Sidebar Cart -->
+        <div class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-sidebar__header">
+                <h2>Seu Carrinho</h2>
+                <span class="cart-sidebar__close" id="cart-sidebar-close">&times;</span>
+            </div>
+            <div class="cart-sidebar__items" id="cart-items">
+                <!-- Items injected by JS -->
+            </div>
+            <div class="cart-sidebar__footer">
+                <div class="cart-total">Total: <span id="cart-total-value">R$ 0,00</span></div>
+                <button class="btn" style="width: 100%;" onclick="checkoutCart()">Finalizar no WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- Sticky Category Nav -->
+        <nav class="category-bar">
+            <div class="container category-bar__inner">
+                <button class="category-btn active" onclick="filterCategory('All')">Todos</button>
+                <button class="category-btn" onclick="filterCategory('Saúde')">Saúde</button>
+                <button class="category-btn" onclick="filterCategory('Emagrecimento')">Emagrecimento</button>
+                <button class="category-btn" onclick="filterCategory('Beleza')">Beleza</button>
+                <button class="category-btn" onclick="filterCategory('Bem-estar')">Bem-estar</button>
+            </div>
+        </nav>
+
+        <!-- Products Section -->
+        <section id="produtos" class="products container">
+            <div class="grid" id="product-grid">
+                <!-- Products will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="container" style="padding: 5rem 0;">
+            <h2 class="section-title">Personalize seu Manipulado</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <p style="text-align: center; margin-bottom: 2rem;">Envie sua receita ou fale com um de nossos farmacêuticos agora mesmo.</p>
+                <form class="contact-form" id="contact-form">
+                    <input name="nome" type="text" placeholder="Nome Completo" required>
+                    <input name="email" type="email" placeholder="Seu Melhor Email" required>
+                    <textarea name="mensagem" placeholder="Mensagem ou link da receita" required></textarea>
+                    <button class="btn" type="submit">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <h3>DrogaNossa</h3>
+                    <p>Sua saúde é nossa prioridade. Manipulados com rigor farmacêutico e amor.</p>
+                </div>
+                <div>
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="#">Privacidade</a></li>
+                        <li><a href="#">Termos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contato</h3>
+                    <p>Email: contato@droganossa.com.br</p>
+                    <p>WhatsApp: (11) 99999-9999</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal" id="modal">
+            <span class="modal__close" id="modal-close">&times;</span>
+            <div class="modal__grid">
+                <div id="modal-placeholder" class="modal__placeholder"></div>
+                <div class="modal__content">
+                    <div class="product-card__category" id="modal-category"></div>
+                    <h2 class="modal__title" id="modal-title"></h2>
+                    <p class="modal__info" id="modal-description"></p>
+                    <p style="font-weight: bold; margin-bottom: 1rem;">Informação técnica:</p>
+                    <p class="modal__info" id="modal-tech-info"></p>
+                    <div class="product-card__price" id="modal-price"></div>
+                    <button class="btn" style="width: 100%; margin-bottom: 2rem;" id="modal-buy-btn">Comprar Agora via WhatsApp</button>
+                </div>
+            </div>
+            
+            <div class="modal__recommendations">
+                <h3>Produtos Sugeridos</h3>
+                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); margin-top: 1rem;" id="modal-recommendations">
+                    <!-- Recommendations injected by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
